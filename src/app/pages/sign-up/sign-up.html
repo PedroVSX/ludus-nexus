@@ -1,0 +1,46 @@
+<div class="container">
+    <div class="card-container">
+        <div class="icon">
+            <img src="favicon.ico" alt="Ludus Nexus Icon">
+        </div>
+
+        <div class="app-name">
+            <h1>Ludus Nexus</h1>
+        </div>
+
+        <div class="sign-in-text">
+            <p>Já possui uma conta? <a class="highlight">Faça login aqui</a></p>
+        </div>
+
+        <hr class="line">
+
+        <form class="form" [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+
+            <input class="form-field" formControlName="username" placeholder="Nome" />
+            @if (signUpForm.controls.username.invalid && signUpForm.controls.username.touched) {
+                <div class="alert">Nome é obrigatório</div>
+            }
+
+            <input class="form-field" formControlName="email" placeholder="E-mail" />
+            @if (signUpForm.controls.email.invalid && signUpForm.controls.email.touched) {
+                <div class="alert">E-mail é obrigatório</div>
+            }
+
+            <input class="form-field" formControlName="password" type="password" placeholder="Senha" />
+            @if (signUpForm.controls.password.invalid && signUpForm.controls.password.touched) {
+                <div class="alert">Senha é obrigatória</div>
+            }
+
+            <p class="password-req">A sua senha deve conter os seguintes requisitos:</p>
+            <ul class="password-req">
+                <li>Pelo menos 8 caracteres</li>
+                <li>Uma letra maiúscula e uma letra minúscula</li>
+                <li>Um número</li>
+                <li>Um caractere especial (!@#$%^&*()-+)</li>
+            </ul>
+
+            <button class="btn primary btn-margin" type="submit" [disabled]="signUpForm.invalid">Cadastrar</button>
+
+            </form>
+    </div>
+</div>

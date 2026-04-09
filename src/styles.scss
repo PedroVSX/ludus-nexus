@@ -1,1 +1,94 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--bg-primary);
+    background: radial-gradient(circle,rgba(11, 10, 18, 1) 0%, rgba(20, 15, 31, 1) 100%);
+}
+
+:root {
+    --bg-primary: #0B0A12;
+    --bg-secondary: #140F1F;
+    --bg-section: #140F1F;
+
+    --card-primary: #221A36;
+    --card-hover: #2A1F4A;
+    --card-active: #31265C;
+
+    --btn-primary: #7C3AED;
+    --btn-secondary: #6D28D9;
+    --btn-tertiary: #A78BFA;
+
+    --glow-focus: #C4B5FD;
+    --cyan: #22D3EE;
+
+    --success: #10B981;
+    --warning: #F59E0B;
+    --error: #EF4444;
+
+    --text-primary: #F1F5F9;
+    --text-secondary: #C7D2FE;
+    --text-smooth: #94A3B8;
+    --text-disabled: #6B7280;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.25rem;
+    border-radius: 10px;
+    border: 0;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &.primary {
+        background-color: var(--btn-primary);
+        color: #fff;
+
+        &:hover {
+            background-color: var(--btn-secondary);
+        }
+    }
+
+    &.secondary {
+        background-color: var(--btn-secondary);
+        color: #fff;
+
+        &:hover {
+            background-color: var(--btn-primary);
+        }
+    }
+
+    &.tertiary {
+        background-color: var(--btn-tertiary);
+        color: #fff;
+
+        &:hover {
+            background-color: var(--btn-secondary);
+        }
+    }
+}
+
+h1 {
+    color: var(--text-primary);
+    font-size: 2rem;
+}
+
+input {
+    padding: 0.5rem;
+    border-radius: 10px;
+    border: 0;
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+
+    &:focus {
+        outline: 2px solid var(--glow-focus);
+        background-color: var(--bg-section);
+    }
+}
