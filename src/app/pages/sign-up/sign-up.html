@@ -16,7 +16,7 @@
 
         <form class="form" [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
 
-            <input class="form-field" formControlName="username" placeholder="Nome" />
+            <input class="form-field" formControlName="username" placeholder="Nome de Usuário" />
             @if (signUpForm.controls.username.invalid && signUpForm.controls.username.touched) {
                 <div class="alert">Nome é obrigatório</div>
             }
