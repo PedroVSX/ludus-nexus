@@ -1,94 +1,132 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
+// Include theming for Angular Material with `mat.theme()`.
+// This Sass mixin will define CSS variables that are used for styling Angular Material
+// components according to the Material 3 design spec.
+// Learn more about theming and how to use it for your application's
+// custom components at https://material.angular.dev/guide/theming
+@use '@angular/material' as mat;
+
+html {
+  height: 100%;
+  @include mat.theme(
+    (
+      color: (
+        primary: mat.$magenta-palette,
+        tertiary: mat.$violet-palette,
+      ),
+      typography: Roboto,
+      density: 0,
+    )
+  );
 }
 
 body {
-    background-color: var(--bg-primary);
-    background: radial-gradient(circle,rgba(11, 10, 18, 1) 0%, rgba(20, 15, 31, 1) 100%);
+  // Default the application to a light color theme. This can be changed to
+  // `dark` to enable the dark color theme, or to `light dark` to defer to the
+  // user's system settings.
+  color-scheme: light;
+
+  // Set a default background, font and text colors for the application using
+  // Angular Material's system-level CSS variables. Learn more about these
+  // variables at https://material.angular.dev/guide/system-variables
+  background-color: var(--mat-sys-surface);
+  color: var(--mat-sys-on-surface);
+  font: var(--mat-sys-body-medium);
+
+  // Reset the user agent margin.
+  margin: 0;
+  height: 100%;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background-color: var(--bg-primary);
+  background: radial-gradient(circle, rgba(11, 10, 18, 1) 0%, rgba(20, 15, 31, 1) 100%);
 }
 
 :root {
-    --bg-primary: #0B0A12;
-    --bg-secondary: #140F1F;
-    --bg-section: #140F1F;
+  --bg-primary: #0b0a12;
+  --bg-secondary: #140f1f;
+  --bg-section: #140f1f;
 
-    --card-primary: #221A36;
-    --card-hover: #2A1F4A;
-    --card-active: #31265C;
+  --card-primary: #221a36;
+  --card-hover: #2a1f4a;
+  --card-active: #31265c;
 
-    --btn-primary: #7C3AED;
-    --btn-secondary: #6D28D9;
-    --btn-tertiary: #A78BFA;
+  --btn-primary: #7c3aed;
+  --btn-secondary: #6d28d9;
+  --btn-tertiary: #a78bfa;
 
-    --glow-focus: #C4B5FD;
-    --cyan: #22D3EE;
+  --glow-focus: #c4b5fd;
+  --cyan: #22d3ee;
 
-    --success: #10B981;
-    --warning: #F59E0B;
-    --error: #EF4444;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --error: #ef4444;
 
-    --text-primary: #F1F5F9;
-    --text-secondary: #C7D2FE;
-    --text-smooth: #94A3B8;
-    --text-disabled: #6B7280;
+  --text-primary: #f1f5f9;
+  --text-secondary: #c7d2fe;
+  --text-smooth: #94a3b8;
+  --text-disabled: #6b7280;
 }
 
 .btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0.75rem 1.25rem;
-    border-radius: 10px;
-    border: 0;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.25rem;
+  border-radius: 10px;
+  border: 0;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 
-    &.primary {
-        background-color: var(--btn-primary);
-        color: #fff;
+  &.primary {
+    background-color: var(--btn-primary);
+    color: #fff;
 
-        &:hover {
-            background-color: var(--btn-secondary);
-        }
+    &:hover {
+      background-color: var(--btn-secondary);
     }
+  }
 
-    &.secondary {
-        background-color: var(--btn-secondary);
-        color: #fff;
+  &.secondary {
+    background-color: var(--btn-secondary);
+    color: #fff;
 
-        &:hover {
-            background-color: var(--btn-primary);
-        }
+    &:hover {
+      background-color: var(--btn-primary);
     }
+  }
 
-    &.tertiary {
-        background-color: var(--btn-tertiary);
-        color: #fff;
+  &.tertiary {
+    background-color: var(--btn-tertiary);
+    color: #fff;
 
-        &:hover {
-            background-color: var(--btn-secondary);
-        }
+    &:hover {
+      background-color: var(--btn-secondary);
     }
+  }
 }
 
 h1 {
-    color: var(--text-primary);
-    font-size: 2rem;
+  color: var(--text-primary);
+  font-size: 2rem;
 }
 
 input {
-    padding: 0.5rem;
-    border-radius: 10px;
-    border: 0;
-    background-color: var(--bg-secondary);
-    color: var(--text-primary);
+  padding: 0.5rem;
+  border-radius: 10px;
+  border: 0;
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
 
-    &:focus {
-        outline: 2px solid var(--glow-focus);
-        background-color: var(--bg-section);
-    }
+  &:focus {
+    outline: 2px solid var(--glow-focus);
+    background-color: var(--bg-section);
+  }
 }
