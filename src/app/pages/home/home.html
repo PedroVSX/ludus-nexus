@@ -1,2 +1,17 @@
-<app-header />
-<p>home works!</p>
+<div class="container">
+    <app-header />
+    <div class="page-container">
+        <div class="greetings">
+            <h1>Bem-vindo(a), <a>{{username}}</a>!</h1>
+            <p>Aqui estão algumas recomendações de jogos para você!</p>
+        </div>
+
+        <h2>Jogos Recomendados</h2>
+        <div class="filters">
+
+        </div>
+        <div class="games-container">
+            <app-game-card />
+        </div>
+    </div>
+</div>
