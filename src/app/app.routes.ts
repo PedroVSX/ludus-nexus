@@ -1,11 +1,9 @@
 import { Routes } from '@angular/router';
-import { SignUp } from './pages/sign-up/sign-up';
-import { SignIn } from './pages/sign-in/sign-in';
+import { UserSearch } from './pages/user-search/user-search';
 import { Home } from './pages/home/home';
 
 export const routes: Routes = [
-    { path: '', redirectTo: 'sign-up', pathMatch: 'full' },
-    { path: 'sign-up', component: SignUp },
-    { path: 'sign-in', component: SignIn },
+    { path: '', redirectTo: 'user-search', pathMatch: 'full' },
+    { path: 'user-search', component: UserSearch },
     { path: 'home', component: Home }
 ];
