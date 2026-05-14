@@ -2,16 +2,14 @@
     <app-header />
     <div class="page-container">
         <div class="greetings">
-            <h1>Bem-vindo(a), <a>{{username}}</a>!</h1>
-            <p>Aqui estão algumas recomendações de jogos para você!</p>
-        </div>
-
-        <h2>Jogos Recomendados</h2>
-        <div class="filters">
-
-        </div>
-        <div class="games-container">
-            <app-game-card />
+            <h1 class="welcome">Bem-vindo(a), <a>{{user.username}}</a>!</h1>
+            <app-profile-card
+                [username]="user.username"
+                [profilePicture]="user.profilePicture"
+                [totalGames]="user.totalGames"
+                [totalWishlist]="user.totalWishlist"
+                [totalFriends]="user.totalFriends" 
+            />
         </div>
     </div>
 </div>
