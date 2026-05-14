@@ -1,2 +1,15 @@
-<app-header />
-<p>home works!</p>
+<div class="container">
+    <app-header />
+    <div class="page-container">
+        <div class="greetings">
+            <h1 class="welcome">Bem-vindo(a), <a>{{user.username}}</a>!</h1>
+            <app-profile-card
+                [username]="user.username"
+                [profilePicture]="user.profilePicture"
+                [totalGames]="user.totalGames"
+                [totalWishlist]="user.totalWishlist"
+                [totalFriends]="user.totalFriends" 
+            />
+        </div>
+    </div>
+</div>
