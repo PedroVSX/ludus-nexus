@@ -38,6 +38,7 @@
             <div *ngIf="!isRecommendationsLoading" class="cards-container">
                 <app-game-card
                     *ngFor="let game of visibleGames"
+                    [appId]="game.appId"
                     [name]="game.name"
                     [shortDescription]="game.shortDescription"
                     [imageUrl]="game.imageUrl"

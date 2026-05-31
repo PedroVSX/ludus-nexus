@@ -8,8 +8,13 @@ import { PercentPipe } from '@angular/common';
   styleUrl: './game-card.scss',
 })
 export class GameCard {
+  @Input() appId!: number;
   @Input() name: string = '';
   @Input() imageUrl: string = '';
   @Input() shortDescription: string = '';
   @Input() score: number = 0;
+
+  openSteamPage(appId: number) {
+    window.open(`https://store.steampowered.com/app/${appId}`, '_blank');
+  }
 }
