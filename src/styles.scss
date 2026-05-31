@@ -5,6 +5,10 @@
 // custom components at https://material.angular.dev/guide/theming
 @use '@angular/material' as mat;
 
+html, body {
+  overflow-x: hidden;
+}
+
 html {
   height: 100%;
   @include mat.theme(
@@ -83,7 +87,13 @@ body {
   border: 0;
   font-weight: 500;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition:
+    transform 0.25s ease, 
+    background-color 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
 
   &.primary {
     background-color: var(--btn-primary);

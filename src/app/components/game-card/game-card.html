@@ -1,10 +1,11 @@
 <div class="container">
     <div class="game-image">
-        <img src="https://placehold.co/400x300" alt="Imagem do Jogo">
+        <img src="{{ imageUrl }}" alt="Imagem do Jogo">
     </div>
 
     <div class="game-info">
-        <h3>Nome do Jogo</h3>
-        <p>Descrição breve do jogo, destacando seus principais atrativos e características únicas.</p>
+        <h3 class="title">{{ name }}</h3>
+        <p class="description">{{ shortDescription }}</p>
+        <p class="score">Score: {{ score | percent:'1.1-1' }}</p>
     </div>
 </div>

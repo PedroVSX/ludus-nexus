@@ -7,8 +7,8 @@ import { Component, Input } from '@angular/core';
   styleUrl: './profile-card.scss',
 })
 export class ProfileCard {
-  @Input() username: string = 'Usuário';
-  @Input() profilePicture: string = 'https://placehold.co/200';
+  @Input() name: string = 'Usuário';
+  @Input() avatar: string = 'https://placehold.co/200';
   @Input() totalGames: number = 0;
   @Input() totalWishlist: number = 0;
   @Input() totalFriends: number = 0;

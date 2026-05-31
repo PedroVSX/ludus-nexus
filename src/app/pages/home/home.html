@@ -1,15 +1,58 @@
 <div class="container">
     <app-header />
+
     <div class="page-container">
         <div class="greetings">
-            <h1 class="welcome">Bem-vindo(a), <a>{{user.username}}</a>!</h1>
-            <app-profile-card
-                [username]="user.username"
-                [profilePicture]="user.profilePicture"
-                [totalGames]="user.totalGames"
-                [totalWishlist]="user.totalWishlist"
-                [totalFriends]="user.totalFriends" 
-            />
+
+            <div *ngIf="isProfileLoading" class="section-loader">
+                <mat-spinner diameter="45"></mat-spinner>
+            </div>
+
+            <div *ngIf="!isProfileLoading">
+
+                <h1
+                    *ngIf="profile as p"
+                    class="welcome">
+
+                    Bem-vindo(a), <a>{{p.name}}</a>!
+                </h1>
+
+                <app-profile-card
+                    *ngIf="profile as p"
+                    [name]="p.name"
+                    [avatar]="p.avatar"
+                    [totalGames]="p.totalGames"
+                    [totalWishlist]="p.totalWishlist"
+                    [totalFriends]="p.totalFriends">
+                </app-profile-card>
+            </div>
+        </div>
+
+        <div class="recommendations">
+            <h2 class="section-title">Recomendações para você</h2>
+
+            <div *ngIf="isRecommendationsLoading" class="section-loader">
+                <mat-spinner diameter="55"></mat-spinner>
+            </div>
+
+            <div *ngIf="!isRecommendationsLoading" class="cards-container">
+                <app-game-card
+                    *ngFor="let game of visibleGames"
+                    [name]="game.name"
+                    [shortDescription]="game.shortDescription"
+                    [imageUrl]="game.imageUrl"
+                    [score]="game.score"
+                >
+                </app-game-card>
+            </div>
+
+            <button 
+                class="btn primary"
+                *ngIf="visibleGames.length < recommendations.length"
+                (click)="showMoreGames()">
+
+                Ver mais jogos
+            </button>
         </div>
     </div>
 </div>
