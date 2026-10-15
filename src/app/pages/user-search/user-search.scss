@@ -1,43 +1,150 @@
-.container {
+html, body {
+    height: 100%;
+}
+
+.main-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.page-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    flex: 1;
+    background: radial-gradient(circle at 60% -15%, #222044 0, transparent 35%), var(--bg);
 
-    .card-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 25rem;
-        padding: 2rem;
-        border-radius: 10px;
-        background-color: var(--card-primary);
+    .card-container {  
+        width: 520px;
+        padding: 40px;
+        border-radius: 20px;
+        background: linear-gradient(145deg, #151723, #0f1017);
+        box-shadow: 0 24px 70px #0008;
         gap: 1rem;
+        border: 1px solid #292d3a;
 
         .icon {
-            width: 4rem;
-            height: 4rem;
+            width: 100%;
+            display: flex;
+            place-items: center;
+            height: 96px;
+            margin-bottom: 20px;
+        }
+
+        .eyebrow {
+            color: var(--purple);
+            letter-spacing: .17em;
+            justify-content: center;
+            align-items: center;
+            gap: 7px;
+            font-size: 10px;
+            font-weight: 700;
+            display: flex;
+            margin: 20px;
+
+            mat-icon {
+                height: 15px;
+                width: 15px;
+                font-size: 15px;
+            }
+        }
+
+        h1 {
+            font-weight: 400;
+            font-size: 46px;
+            line-height: 1.04;
+            text-align: center;
+            letter-spacing: -.05em;
+            margin-bottom: 20px;
+
+            em {
+                font-style: normal;
+                color: var(--purple);
+            }
         }
 
         .text {
-            color: var(--text-secondary);
+            color: var(--muted);
             text-align: center;
+            margin-bottom: 40px;
         }
 
-        hr {
-            width: 100%;
-            border: 0;
-            border-top: 1px solid var(--text-smooth);
-        }
+        form {
 
-        .input-username {
-            width: 100%;
-            height: 2.5rem;
+            label {
+                display: block;
+                color: #c8cbd8;
+                margin-bottom: 8px;
+                font-size: 12px;
+                font-weight: 600;
+            }
+
+            .search-bar {
+                display: flex;
+                align-items: center;
+                padding: 0 14px;
+                height: 48px;
+                gap: 10px;
+                color: #767d91;
+                background: #0b0c12;
+                border: 1px solid #343847;
+                border-radius: 10px;
+                margin-bottom: 10px;
+
+                .input-username {
+                    width: 100%;
+                    height: 2.5rem;
+                }
+
+                &:focus-within {
+                    border-color: #927fe0;
+                    box-shadow: 0 0 0 3px #927fe022;
+                }
+            }
         }
 
         .error {
             color: var(--error);
+        }
+
+        .btn-primary {
+            color: #fff;
+            background: linear-gradient(135deg, #8b5cf6, #6d3fd6);
+            border: 0;
+            border-radius: 10px;
+            justify-content: center;
+            align-items: center;
+            gap: 9px;
+            width: 100%;
+            height: 48px;
+            margin-top: 14px;
+            font-size: 13px;
+            font-weight: 700;
+            transition: all .2s;
+            display: flex;
+            margin-bottom: 20px;
+
+            &:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 10px 25px #7c3aed55;
+            }
+        }
+
+        .privacy-note {
+            display: flex;
+            color: #6d7384;
+            justify-content: center;
+            align-items: center;
+            gap: 7px;
+            font-size: 11px;
+
+            mat-icon {
+                height: 15px;
+                width: 15px;
+                font-size: 15px;
+                color: var(--green);
+            }
         }
     }
 }

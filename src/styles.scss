@@ -48,110 +48,36 @@ body {
 }
 
 body {
-  background-color: var(--bg-primary);
-  background: radial-gradient(circle, rgba(11, 10, 18, 1) 0%, rgba(20, 15, 31, 1) 100%);
+  color: var(--text);
+  background-color: var(--bg);
 }
 
 :root {
-  --bg-primary: #0b0a12;
-  --bg-secondary: #140f1f;
-  --bg-section: #140f1f;
-
-  --card-primary: #221a36;
-  --card-hover: #2a1f4a;
-  --card-active: #31265c;
-
-  --btn-primary: #7c3aed;
-  --btn-secondary: #6d28d9;
-  --btn-tertiary: #a78bfa;
-
-  --glow-focus: #c4b5fd;
-  --cyan: #22d3ee;
-
-  --success: #10b981;
-  --warning: #f59e0b;
-  --error: #ef4444;
-
-  --text-primary: #f1f5f9;
-  --text-secondary: #c7d2fe;
-  --text-smooth: #94a3b8;
-  --text-disabled: #6b7280;
-}
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.75rem 1.25rem;
-  border-radius: 10px;
-  border: 0;
-  font-weight: 500;
-  cursor: pointer;
-  transition:
-    transform 0.25s ease, 
-    background-color 0.3s ease;
-
-  &:hover {
-    transform: translateY(-2px);
-  }
-
-  &.primary {
-    background-color: var(--btn-primary);
-    color: #fff;
-
-    &:hover {
-      background-color: var(--btn-secondary);
-    }
-  }
-
-  &.secondary {
-    background-color: var(--btn-secondary);
-    color: #fff;
-
-    &:hover {
-      background-color: var(--btn-primary);
-    }
-  }
-
-  &.tertiary {
-    background-color: var(--btn-tertiary);
-    color: #fff;
-
-    &:hover {
-      background-color: var(--btn-secondary);
-    }
-  }
-}
-
-h1 {
-  color: var(--text-primary);
-  font-size: 2rem;
-}
-
-h2 {
-    color: var(--text-primary);
-    font-size: 1.5rem;
-}
-
-h3 {
-    color: var(--text-primary);
-    font-size: 1.25rem;
-}
-
-h4 {
-    color: var(--text-primary);
-    font-size: 1rem;
+  --lightningcss-light: ;
+  --lightningcss-dark: initial;
+  color-scheme: dark;
+  --bg: #090a0f;
+  --panel: #11131b;
+  --panel-2: #171923;
+  --line: #252936;
+  --muted: #9298aa;
+  --text: #f5f7fb;
+  --purple: #a78bfa;
+  --cyan: #67e8f9;
+  --green: #8ee6b3;
 }
 
 input {
-  padding: 0.5rem;
-  border-radius: 10px;
   border: 0;
-  background-color: var(--bg-secondary);
-  color: var(--text-primary);
+  background: none;
+  color: var(--text);
 
   &:focus {
-    outline: 2px solid var(--glow-focus);
-    background-color: var(--bg-section);
+    outline: none;
+    color: var(--text);
   }
+}
+
+button {
+  cursor: pointer
 }

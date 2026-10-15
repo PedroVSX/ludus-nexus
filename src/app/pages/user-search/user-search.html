@@ -1,19 +1,44 @@
-<div class="container">
-    <div class="card-container">
-        <img class="icon" src="favicon.svg" alt="Favicon">
-        <h1>Ludus Nexus</h1>
-        <p class="text">Insira seu nome de usuário para iniciar a recomendação</p>
-        <hr>
+<div class="main-wrapper">
+    <div class="page-container">
+        <div class="card-container">
+            <div class="icon">
+                <img class="icon" src="favicon.svg" alt="Favicon">
+            </div>
+            <div class="eyebrow">
+                <mat-icon>star_outline</mat-icon>
+                COMEÇE SUA DESCOBERTA
+            </div>
+            <h1>Encontre seu próximo <em>jogo favorito.</em></h1>
+            <p class="text">Conecte seu perfil Steam para analisarmos seus gostos e criar recomendações feitas para você.</p>
 
-        <input 
-            class="input-username" 
-            [(ngModel)]="username" 
-            (input)="errorMessage = ''"
-            name="username"
-            placeholder="Nome de usuário">
+            <form>
+                <label for="username">Seu nome de usuário ou SteamID</label>
 
-        <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+                <div class="search-bar">
+                    <mat-icon>search</mat-icon>
+                    <input
+                        id="username"
+                        class="input-username" 
+                        [(ngModel)]="username" 
+                        (input)="errorMessage = ''"
+                        name="username"
+                        placeholder="ex.: nomedeusuario">
+                </div>
+            </form>
 
-        <button class="btn primary" (click)="search()">Iniciar</button>
+            <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+
+            <button class="btn-primary" (click)="search()">
+                Continuar
+                <mat-icon>arrow_forward</mat-icon>
+            </button>
+
+            <div class="privacy-note">
+                <mat-icon>gpp_good</mat-icon>
+                Seus dados são usados somente para personalizar suas recomendações.
+            </div>
+        </div>
     </div>
+
+    <app-footer></app-footer>
 </div>

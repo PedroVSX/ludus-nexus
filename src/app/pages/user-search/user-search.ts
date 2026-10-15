@@ -1,13 +1,16 @@
 import { Component, ChangeDetectorRef } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router'; 
+import { Router } from '@angular/router';
+import { MatIconModule } from '@angular/material/icon';
+
+import { Footer } from '../../components/footer/footer';
 
 import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-user-search',
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, MatIconModule, Footer],
   templateUrl: './user-search.html',
   styleUrl: './user-search.scss',
 })
@@ -18,7 +21,7 @@ export class UserSearch {
   constructor(
     private router: Router,
     private userService: UserService,
-    private cdr: ChangeDetectorRef
+    private cdr: ChangeDetectorRef,
   ) {}
 
   search() {
