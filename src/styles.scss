@@ -50,6 +50,7 @@ body {
 body {
   color: var(--text);
   background-color: var(--bg);
+  background: radial-gradient(circle at 60% -15%, #222044 0, transparent 35%), var(--bg);
 }
 
 :root {
