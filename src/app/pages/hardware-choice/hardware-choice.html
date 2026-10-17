@@ -29,14 +29,18 @@
         </div>
 
         <div class="choice-grid">
-            <button class="choice-card selected">
+            <button
+                class="choice-card"
+                [ngClass]="{ 'selected': selectedOption === 'hardware' }"
+                (click)="selectOption('hardware')">
+
                 <div class="choice-icon hardware-icon">
                     <mat-icon>memory</mat-icon>
                 </div>
 
                 <div class="choice-head">
                     <h2>Considerar meu hardware</h2>
-                    <span class="radio">✓</span>
+                    <span class="radio">{{ selectedOption === 'hardware' ? '✓' : '' }}</span>
                 </div>
 
                 <p>Encontre jogos que rodam bem no seu computador, sem surpresas de performance.</p>
@@ -53,20 +57,23 @@
                     </span>
                 </div>
 
-                <div class="choice-cta">
+                <div class="choice-below-label">
                     Recomendação inteligente
-                    <mat-icon>arrow_forward</mat-icon>
                 </div>
             </button>
 
-            <button class="choice-card">
+            <button
+                class="choice-card"
+                [ngClass]="{ 'selected': selectedOption === 'discovery' }"
+                (click)="selectOption('discovery')">
+
                 <div class="choice-icon discovery-icon">
                     <mat-icon>rocket_launch</mat-icon>
                 </div>
 
                 <div class="choice-head">
                     <h2>Explorar sem limites</h2>
-                    <span class="radio"></span>
+                    <span class="radio">{{ selectedOption === 'discovery' ? '✓' : '' }}</span>
                 </div>
 
                 <p>Priorize seus gostos e descubra experiências incríveis, independente do hardware.</p>
@@ -83,10 +90,16 @@
                     </span>
                 </div>
 
-                <div class="choice-cta">
+                <div class="choice-below-label">
                     Ver minhas recomendações
-                    <mat-icon>arrow_forward</mat-icon>
                 </div>
+            </button>
+        </div>
+
+        <div class="recommendation-cta">
+            <button class="btn-primary">
+                Iniciar Recomendação
+                <mat-icon>arrow_forward</mat-icon>
             </button>
         </div>
 
