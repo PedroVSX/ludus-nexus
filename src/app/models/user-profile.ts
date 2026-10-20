@@ -4,4 +4,5 @@ export interface UserProfile {
   totalGames: number;
   totalFriends: number;
   totalWishlist: number;
+  favoriteGenres: string;
 }

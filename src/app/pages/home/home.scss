@@ -1,69 +1,156 @@
-.container {
+.main-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
 
-    .page-container {
+.page-container {
+    flex: 1;
+    margin-top: 50px;
+    padding: 60px 30px 100px;
+
+    .recommendation-header {
+        justify-content: space-between;
+        align-items: end;
+        padding-bottom: 36px;
         display: flex;
-        padding: 2rem;
-        flex-direction: column;
-        align-items: center;
-        gap: 2rem;
+        border-bottom: 1px solid rgb(36, 39, 51);
 
-        .greetings {
-            display: flex;
-            flex-direction: column;
+        .eyebrow {
+            color: rgb(165, 148, 237);
+            letter-spacing: 0.17em;
+            justify-content: flex-start;
             align-items: center;
-            justify-content: center;
-            text-align: center;
-            width: 100%;
-            color: var(--text-secondary);
-            gap: 1rem;
+            font-size: 10px;
+            font-weight: 700;
+            display: flex;
+            gap: 7px;
 
-            .greetings-content {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                text-align: center;
-
-                .welcome {
-                    margin: 1rem 0;
-                }
-
-                a {
-                    color: var(--btn-primary);
-                }
-
-                p {
-                    margin-top: 0.5rem;
-                }
+            mat-icon {
+                width: 15px;
+                height: 15px;
+                font-size: 15px;
             }
         }
 
-        .recommendations {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 1rem;
+        h1 {
+            font-size: clamp(34px, 4vw, 48px);
+            font-weight: 400;
+            letter-spacing: -0.06em;
+            line-height: 1.04;
+            margin: 16px 0px 16px;
 
-            .cards-container {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 1rem;
-                justify-content: center;
+            em {
+                font-style: normal;
+                color: var(--purple);
             }
+        }
+
+        p {
+            color: var(--muted);
+            max-width: 475px;
+            font-size: 14px;
+            line-height: 1.7;
+            margin: auto;
+        }
+    }
+
+    .toolbar {
+
+    }
+
+    .recommendation-layout {
+        grid-template-columns: 250px 1fr;
+        gap: 24px;
+        display: grid;
+
+        .side-title {
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: .13em;
+            margin: 4px 0 13px;
+            font-size: 10px;
+        }
+
+        .games-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 17px;
+            display: grid;
         }
     }
 }
 
-.section-loader {
-    width: 100%;
-    min-height: 250px;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
-::ng-deep .mat-mdc-progress-spinner circle {
-    stroke: var(--btn-primary);
-}
+
+
+
+// .container {
+
+//     .page-container {
+//         display: flex;
+//         padding: 2rem;
+//         flex-direction: column;
+//         align-items: center;
+//         gap: 2rem;
+
+//         .greetings {
+//             display: flex;
+//             flex-direction: column;
+//             align-items: center;
+//             justify-content: center;
+//             text-align: center;
+//             width: 100%;
+//             color: var(--text-secondary);
+//             gap: 1rem;
+
+//             .greetings-content {
+//                 display: flex;
+//                 flex-direction: column;
+//                 align-items: center;
+//                 justify-content: center;
+//                 text-align: center;
+
+//                 .welcome {
+//                     margin: 1rem 0;
+//                 }
+
+//                 a {
+//                     color: var(--btn-primary);
+//                 }
+
+//                 p {
+//                     margin-top: 0.5rem;
+//                 }
+//             }
+//         }
+
+//         .recommendations {
+//             display: flex;
+//             flex-direction: column;
+//             justify-content: center;
+//             align-items: center;
+//             gap: 1rem;
+
+//             .cards-container {
+//                 display: flex;
+//                 flex-wrap: wrap;
+//                 gap: 1rem;
+//                 justify-content: center;
+//             }
+//         }
+//     }
+// }
+
+// .section-loader {
+//     width: 100%;
+//     min-height: 250px;
+
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+// }
+
+// ::ng-deep .mat-mdc-progress-spinner circle {
+//     stroke: var(--btn-primary);
+// }

@@ -1,4 +1,41 @@
-<div class="container">
+<div class="taste-card">
+    <div class="taste-top">
+        <div class="mini-avatar">
+            <img src="{{ avatar }}" alt="Profile Picture">
+        </div>
+
+        <div>
+            <b>{{ name }}</b>
+            <span>Steam ID conectado</span>
+        </div>
+
+        <mat-icon>verified</mat-icon>
+    </div>
+
+    <div class="taste-info">
+        <span>Suas informações</span>
+        <div class="info">
+            <strong>{{ totalGames }}</strong>
+            <span>jogos</span>
+        </div>
+        <div class="info">
+            <strong>{{ totalWishlist }}</strong>
+            <span>wishlist</span>
+        </div>
+        <div class="info">
+            <strong>{{ totalFriends }}</strong>
+            <span>amigos</span>
+        </div>
+    </div>
+
+    <div class="taste-stat">
+        <span>Seu gosto combina com</span>
+        <strong>{{ favoriteGenres }}</strong>
+    </div>
+</div>
+
+
+<!-- <div class="container">
     <div class="profile-picture">
         <img src="{{ avatar }}" alt="Profile Picture">
     </div>
@@ -18,4 +55,4 @@
             <p>Amigos</p>
         </div>
     </div>
-</div>
+</div> -->

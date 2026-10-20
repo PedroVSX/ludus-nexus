@@ -1,9 +1,10 @@
 import { Component, Input } from '@angular/core';
 import { PercentPipe } from '@angular/common';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-game-card',
-  imports: [PercentPipe],
+  imports: [PercentPipe, MatIconModule],
   templateUrl: './game-card.html',
   styleUrl: './game-card.scss',
 })

@@ -1,10 +1,12 @@
 import { Component, ChangeDetectorRef } from '@angular/core';
 import { Header } from '../../components/header/header';
+import { Footer } from '../../components/footer/footer';
 import { GameCard } from '../../components/game-card/game-card';
 import { ProfileCard } from '../../components/profile-card/profile-card';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatIconModule } from '@angular/material/icon';
 
 import { UserProfile } from '../../models/user-profile';
 import { Recommendation } from '../../models/recommendation';
@@ -14,7 +16,7 @@ import { RecommendationService } from '../../services/recommendation.service';
 
 @Component({
   selector: 'app-home',
-  imports: [CommonModule, Header, GameCard, ProfileCard, MatProgressSpinnerModule],
+  imports: [CommonModule, Header, Footer, GameCard, ProfileCard, MatProgressSpinnerModule, MatIconModule],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
