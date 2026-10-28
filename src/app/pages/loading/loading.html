@@ -1,0 +1,68 @@
+
+<div class="loading-page">
+  <div class="loading-content">
+
+    <div class="loading-heading">
+      <span class="eyebrow">SUA PRÓXIMA AVENTURA COMEÇA AQUI</span>
+
+      <h1>
+        Preparando sua
+        <br>
+        <em>próxima aventura.</em>
+      </h1>
+
+      <p>
+        Estamos reunindo recomendações pensadas para você.
+      </p>
+    </div>
+
+    <div class="spinner-container">
+      <div class="spinner-ring">
+        <mat-icon>sports_esports</mat-icon>
+      </div>
+
+      <div class="spinner-orbit orbit-one"></div>
+      <div class="spinner-orbit orbit-two"></div>
+    </div>
+
+    <div class="loading-status" aria-live="polite">
+      <h2>{{ currentMessage }}</h2>
+
+      <p>
+        Isso pode levar alguns instantes. Prepare-se para descobrir
+        algo novo.
+      </p>
+    </div>
+ 
+    <div class="loading-error" *ngIf="errorMessage">
+    <mat-icon>error_outline</mat-icon>
+
+    <p>{{ errorMessage }}</p>
+
+    <button
+        type="button"
+        class="retry-button"
+        (click)="startLoading()">
+        <mat-icon>refresh</mat-icon>
+        Tentar novamente
+    </button>
+    </div>
+
+    <div class="loading-tips">
+      <mat-icon>lightbulb</mat-icon>
+
+      <p>
+        {{ selectedOption === 'hardware'
+          ? 'Uma boa combinação entre seus gostos e seu hardware pode revelar jogos incríveis.'
+          : 'Às vezes, sua próxima aventura está em um jogo que você nunca imaginou experimentar.'
+        }}
+      </p>
+    </div>
+
+    <div class="loading-footer">
+      <span class="loading-dot"></span>
+      CONSTRUINDO SUA EXPERIÊNCIA PERSONALIZADA
+    </div>
+
+  </div>
+</div>

@@ -96,8 +96,114 @@
             </button>
         </div>
 
+        <!-- Configuração manual do hardware -->
+        <section
+            class="hardware-config"
+            *ngIf="selectedOption === 'hardware'">
+
+            <div class="hardware-config-header">
+                <div class="hardware-config-icon">
+                    <mat-icon>settings</mat-icon>
+                </div>
+
+                <div>
+                    <h2>Configure seu PC</h2>
+                    <p>
+                        Informe os componentes do seu computador
+                        para personalizar suas recomendações.
+                    </p>
+                </div>
+            </div>
+
+            <div class="hardware-fields">
+                <div class="form-field">
+                    <label for="cpu">
+                        <mat-icon>memory</mat-icon>
+                        Processador (CPU)
+                    </label>
+
+                    <input
+                        id="cpu"
+                        type="text"
+                        name="cpu"
+                        [(ngModel)]="hardware.cpu"
+                        placeholder="Ex.: AMD Ryzen 5 5600"
+                        autocomplete="off"
+                    />
+
+                    <span class="field-hint">
+                        Consulte o modelo em Informações do Sistema
+                        no Windows, se não souber qual é.
+                    </span>
+                </div>
+
+                <div class="form-field">
+                    <label for="gpu">
+                        <mat-icon>videogame_asset</mat-icon>
+                        Placa de vídeo (GPU)
+                    </label>
+
+                    <input
+                        id="gpu"
+                        type="text"
+                        name="gpu"
+                        [(ngModel)]="hardware.gpu"
+                        placeholder="Ex.: NVIDIA GeForce RTX 3060"
+                        autocomplete="off"
+                    />
+
+                    <span class="field-hint">
+                        Informe a placa de vídeo dedicada, se possuir.
+                    </span>
+                </div>
+
+                <div class="form-field">
+                    <label for="ram">
+                        <mat-icon>storage</mat-icon>
+                        Memória RAM
+                    </label>
+
+                    <select
+                        id="ram"
+                        name="ram"
+                        [(ngModel)]="hardware.ramGb">
+
+                        <option [ngValue]="0" disabled>
+                            Selecione a memória RAM
+                        </option>
+                        <option [ngValue]="4">4 GB</option>
+                        <option [ngValue]="8">8 GB</option>
+                        <option [ngValue]="16">16 GB</option>
+                        <option [ngValue]="24">24 GB</option>
+                        <option [ngValue]="32">32 GB</option>
+                        <option [ngValue]="48">48 GB</option>
+                        <option [ngValue]="64">64 GB</option>
+                        <option [ngValue]="128">128 GB ou mais</option>
+                    </select>
+                </div>
+            </div>
+
+            <div
+                class="hardware-error"
+                *ngIf="hardwareError"
+                role="alert">
+
+                <mat-icon>error_outline</mat-icon>
+                <span>{{ hardwareError }}</span>
+            </div>
+
+            <div class="hardware-tip">
+                <mat-icon>info</mat-icon>
+                <span>
+                    Não sabe o modelo exato? Você pode consultar
+                    as informações do sistema do seu computador.
+                </span>
+            </div>
+        </section>
+        <!-- FIM -->
+
         <div class="recommendation-cta">
-            <button class="btn-primary">
+            <button class="btn-primary" (click)="continueToLoading()">
                 Iniciar Recomendação
                 <mat-icon>arrow_forward</mat-icon>
             </button>

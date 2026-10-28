@@ -30,6 +30,9 @@ export class Home {
   isProfileLoading = true;
   isRecommendationsLoading = true;
 
+  selectedOption: 'hardware' | 'discovery' = 'hardware';
+  hardware: any = null;
+
   constructor(
     private userService: UserService,
     private recommendationService: RecommendationService,
@@ -37,12 +40,43 @@ export class Home {
     private route: ActivatedRoute
   ) {}
 
-  ngOnInit() {
-    this.route.params.subscribe(params => {
-      this.username = params['username'];
-      this.loadProfile();
+  
+  ngOnInit(): void {
+    const state = history.state;
+
+    this.selectedOption = state['selectedOption'] ?? 'hardware';
+    this.hardware = state['hardware'] ?? null;
+
+    const hasProfile = !!state['profile'];
+    const hasRecommendations =
+      Array.isArray(state['recommendations']);
+
+    if (hasProfile) {
+      this.profile = state['profile'];
+      this.isProfileLoading = false;
+    }
+
+    if (hasRecommendations) {
+      this.recommendations = state['recommendations'];
+      this.visibleGames = this.recommendations.slice(
+        0,
+        this.currentLimit
+      );
+      this.isRecommendationsLoading = false;
+    }
+
+    this.route.paramMap.subscribe(params => {
+      this.username = params.get('username') ?? '';
+
+      // Busca novamente somente se os dados não vieram do Loading.
+      if (!hasProfile) {
+        this.loadProfile();
+      }
+
+      if (!hasRecommendations) {
+        this.loadRecommendations();
+      }
     });
-    this.loadRecommendations();
   }
 
   loadProfile() {

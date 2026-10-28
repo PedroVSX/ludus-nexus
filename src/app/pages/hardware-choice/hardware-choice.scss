@@ -277,3 +277,221 @@ html, body {
         }
     }
 }
+
+// HARDWARE MANUAL
+.page-container {
+    
+    .hardware-config {
+        max-width: 800px;
+        margin: 0 auto 28px;
+        padding: 26px;
+        color: var(--text);
+        background: linear-gradient(145deg, #151723, #101117);
+        border: 1px solid #292d3a;
+        border-radius: 17px;
+        animation: hardware-appear 0.25s ease;
+
+        .hardware-config-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 26px;
+
+            .hardware-config-icon {
+                display: grid;
+                place-items: center;
+                flex-shrink: 0;
+                width: 48px;
+                height: 48px;
+                color: #91e7db;
+                background: #3aaca126;
+                border-radius: 12px;
+
+                mat-icon {
+                    width: 25px;
+                    height: 25px;
+                    font-size: 25px;
+                }
+            }
+
+            h2 {
+                margin: 0 0 7px;
+                font-size: 19px;
+            }
+
+            p {
+                margin: 0;
+                color: var(--muted);
+                font-size: 13px;
+                line-height: 1.6;
+            }
+        }
+
+        .hardware-fields {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 22px;
+
+            .form-field {
+                display: flex;
+                flex-direction: column;
+                gap: 9px;
+                min-width: 0;
+
+                &:last-child {
+                    grid-column: 1 / -1;
+                }
+
+                label {
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    color: #d9dbea;
+                    font-size: 13px;
+                    font-weight: 600;
+
+                    mat-icon {
+                        width: 17px;
+                        height: 17px;
+                        color: var(--purple);
+                        font-size: 17px;
+                    }
+                }
+
+                input,
+                select {
+                    box-sizing: border-box;
+                    width: 100%;
+                    min-height: 46px;
+                    padding: 0 13px;
+                    color: var(--text);
+                    background: #0d0f16;
+                    border: 1px solid #343746;
+                    border-radius: 9px;
+                    outline: none;
+                    font: inherit;
+                    font-size: 13px;
+                    transition: border-color 0.2s, box-shadow 0.2s;
+
+                    &:focus {
+                        border-color: var(--purple);
+                        box-shadow: 0 0 0 3px #8b5cf626;
+                    }
+
+                    &::placeholder {
+                        color: #74798a;
+                    }
+                }
+
+                select {
+                    cursor: pointer;
+
+                    option {
+                        color: var(--text);
+                        background: #151723;
+                    }
+                }
+
+                .field-hint {
+                    color: #777d8d;
+                    font-size: 11px;
+                    line-height: 1.5;
+                }
+            }
+        }
+
+        .hardware-error {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            margin-top: 20px;
+            padding: 12px;
+            color: #ffaaaa;
+            background: #ff5b5b12;
+            border: 1px solid #ff5b5b40;
+            border-radius: 9px;
+            font-size: 12px;
+
+            mat-icon {
+                flex-shrink: 0;
+                width: 19px;
+                height: 19px;
+                font-size: 19px;
+            }
+        }
+
+        .hardware-tip {
+            display: flex;
+            align-items: flex-start;
+            gap: 9px;
+            margin-top: 22px;
+            padding-top: 17px;
+            color: #8e94a6;
+            border-top: 1px solid #292c38;
+            font-size: 11px;
+            line-height: 1.6;
+
+            mat-icon {
+                flex-shrink: 0;
+                width: 16px;
+                height: 16px;
+                color: var(--purple);
+                font-size: 16px;
+            }
+        }
+    }
+
+    @keyframes hardware-appear {
+        from {
+            opacity: 0;
+            transform: translateY(7px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @media (max-width: 700px) {
+        .page-container {
+            padding: 0 18px;
+
+            .stepper {
+                box-sizing: border-box;
+                width: 100%;
+                max-width: 420px;
+                padding: 0 12px;
+            }
+
+            .choice-grid {
+                grid-template-columns: 1fr;
+                margin-top: 32px;
+            }
+
+            .hardware-config {
+                padding: 20px;
+
+                .hardware-fields {
+                    grid-template-columns: 1fr;
+
+                    .form-field:last-child {
+                        grid-column: auto;
+                    }
+                }
+            }
+
+            .recommendation-cta {
+                .btn-primary {
+                    width: 100%;
+                    max-width: 400px;
+                }
+            }
+
+            .privacy-note {
+                text-align: center;
+            }
+        }
+    }
+
+}
