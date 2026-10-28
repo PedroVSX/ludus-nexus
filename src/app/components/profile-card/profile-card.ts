@@ -13,5 +13,16 @@ export class ProfileCard {
   @Input() totalGames: number = 0;
   @Input() totalWishlist: number = 0;
   @Input() totalFriends: number = 0;
-  @Input() favoriteGenres: string = '';
+  @Input() favoriteGenres: string[] = [];
+
+  get formattedGenres(): string {
+    return this.favoriteGenres
+      .map(genre =>
+        genre
+          .split(' ')
+          .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+          .join(' ')
+      )
+      .join(', ');
+  }
 }
