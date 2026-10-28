@@ -1,4 +1,36 @@
-<div class="container" (click)="openSteamPage(appId)">
+<div class="game-card">
+    <div class="card-art-wrap">
+        <div class="game-art">
+            <img src="{{ imageUrl }}" alt="Imagem do Jogo">
+        </div>
+        <span class="match-badge">
+            <mat-icon>auto_awesome</mat-icon>
+            {{ score | percent:'1.1-1' }} match
+        </span>
+    </div>
+
+    <div class="card-content">
+        <div class="game-meta">
+
+        </div>
+
+        <h2>{{ name }}</h2>
+        <p>{{ shortDescription }}</p>
+
+        <div class="tag-row">
+
+        </div>
+
+        <div class="spec-row">
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- <div class="container" (click)="openSteamPage(appId)">
     <div class="game-image">
         <img src="{{ imageUrl }}" alt="Imagem do Jogo">
     </div>
@@ -8,4 +40,4 @@
         <p class="description">{{ shortDescription }}</p>
         <p class="score">Score: {{ score | percent:'1.1-1' }}</p>
     </div>
-</div>
+</div> -->
