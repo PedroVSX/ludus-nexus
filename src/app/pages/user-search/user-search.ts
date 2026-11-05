@@ -35,7 +35,7 @@ export class UserSearch {
     this.userService.getProfile(this.username).subscribe({
       next: () => {
         // usuário existe
-        this.router.navigate(['/home', this.username]);
+        this.router.navigate(['/hardware-choice', this.username]);
         console.log('Usuário encontrado, redirecionando para home...');
       },
 
